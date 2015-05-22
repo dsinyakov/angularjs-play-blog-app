@@ -1,0 +1,29 @@
+<div class="panel panel-default" ng-show="post">
+  <div class="panel-body">
+    <h4>{{ post.subject }}</h4>
+    <p>
+      {{ post.content }}
+    </p>
+  </div>
+
+  <div class="panel-footer">Post by: {{ post.user.email }} | Comments
+    <span class="badge">{{ post.commentCount }}</span></a></div>
+</div>
+
+<div class="well" ng-repeat="comment in post.comments">
+  <span class="label label-default">By: {{ comment.user.email }}</span>
+  <br/>
+  {{ comment.content }}
+</div>
+
+<div ng-hide="user.username || !post"><h4><a ng-href="/#/login">Login</a> to comment</h4></div>
+<form name="addCommentForm" ng-submit="addComment()" novalidate ng-show="user.username">
+  <div><h4>Add comment</h4></div>
+  <div>
+    <label for="comment">Comment</label>
+    <textarea name="comment" class="form-control" id="comment" placeholder="Comment"
+              ng-model="comment"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add comment</button>
+</form>

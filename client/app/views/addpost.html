@@ -1,0 +1,14 @@
+<form name="postForm" ng-submit="post()" novalidate>
+  <div>
+    <label for="subject">Subject</label>
+    <input name="subject" class="form-control" type="subject" id="subject" placeholder="Subject"
+           ng-model="subject">
+  </div>
+  <div>
+    <label for="content">Post</label>
+    <textarea name="content" class="form-control" id="content" placeholder="Content"
+              ng-model="content"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit post</button>
+</form>
